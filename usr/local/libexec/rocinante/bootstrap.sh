@@ -119,7 +119,7 @@ git@*:*/*)
     ROCINANTE_TEMPLATE_URL=${1}
     git_repository=$(echo "${1}" | awk -F : '{ print $2 }')
     ROCINANTE_TEMPLATE_USER=$(echo "${git_repository}" | awk -F / '{ print $1 }')
-    ROCINANTE_TEMPLATE_REPO=$(echo "${git_repository}" | awk -F / '{ print $2 }')
+    ROCINANTE_TEMPLATE_REPO=$(echo "${git_repository%.git}" | awk -F / '{ print $2 }')
     fetch_template
     ;;
 esac
