@@ -30,6 +30,8 @@
 
 . /usr/local/libexec/rocinante/common.sh
 
+OPTION='-RP'
+
 CP_SOURCE="${1}"
 CP_DEST="${2}"
 
@@ -37,7 +39,7 @@ CP_DEST="${2}"
 
 info "\n[CP]:"
 
-cp "${CP_SOURCE}" "${CP_DEST}"
+cp ${OPTION} "${CP_SOURCE}" "${CP_DEST}"
 
 RETURN="$?"
 
