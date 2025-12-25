@@ -102,11 +102,11 @@ fetch_template() {
         error_notify "[ERROR]: Git not found."
         error_exit "Not yet implemented."
     else
-        if [ ! -d "${rocinante_templatesdir}/.git" ]; then
+        if [ ! -d "${raw_template_dir}/.git" ]; then
             if ! git clone "${url}" "${raw_template_dir}"; then
                 error_notify "Clone unsuccessful."
             fi
-        elif [ -d "${rocinante_templatesdir}/.git" ]; then
+        elif [ -d "${raw_template_dir}/.git" ]; then
             if ! git -C "${raw_template_dir}" pull; then
                 error_notify "Template update unsuccessful."
             fi
