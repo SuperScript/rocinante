@@ -30,11 +30,13 @@
 
 . /usr/local/libexec/rocinante/common.sh
 
+OPTION='-c'
+
 # Execute CMD
 
-info "\n[CMD]:"
+info "\n[cmd]:"
 
-sh "$@"
+sh ${OPTION} "$@"
 
 ERROR_CODE="$?"
 
